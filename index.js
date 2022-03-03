@@ -8,6 +8,7 @@ app.set("view engine", "ejs")
 
 app.set("views", path.join(__dirname, "views"))
 app.use(express.static(path.join(__dirname, "public")))
+app.use(express.urlencoded({ extended: false }));
 
 /* Connecting to database */
 const db_name= path.join(__dirname, "database", "appdb.db")
@@ -82,6 +83,29 @@ app.get("/api/speakers", (req, res) =>{
         });
 
     })
+    app.get("/speakers/edit/:id", (req, res) =>{
+        const id= req.params.id;
+        const findspeakerbyid="SELECT * FROM Speakers WHERE id=?";
+        db.get(findspeakerbyid, id,(err,row)=>{
+            if(err){
+                console.error(err.message)
+            }
+            res.render("edit_speaker", {model: row})
+
+        });
+
+    })
+    /* Update records */
+    app.post("/speakers/edit/:id", (req, res) => {
+        const id = req.params.id;
+        const speaker = [req.body.name, req.body.title, req.body.about,req.body.workplace, id];
+        const sql = "UPDATE Speakers SET name = ?, title = ?, about = ?, workplace = ? WHERE (id = ?)";
+        db.run(sql, speaker, err => {
+          // if (err) ...
+          res.redirect(`/api/speakers/${id}`);
+        });
+      });
+
 
    
 })
