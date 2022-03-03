@@ -105,6 +105,29 @@ app.get("/api/speakers", (req, res) =>{
           res.redirect(`/api/speakers/${id}`);
         });
       });
+/* Adding new speaker */      
+app.get("/create", (req, res) => {
+    res.render("create", { model: {} });
+  });
+  /*  Posting data from create speaker screen */
+  app.post("/create", (req, res) => {
+    const sql = "INSERT INTO Speakers (name, title, workplace, about) VALUES (?, ?, ?,?)";
+    const speaker = [req.body.name, req.body.title, req.body.workplace, req.body.about];
+    db.run(sql, speaker, err => {
+      // if (err) ...
+      res.redirect("/api/speakers");
+    });
+  });
+  /*  Delete speaker */
+  app.post("/delete/:id", (req, res) => {
+    const id = req.params.id;
+    const sql = "DELETE FROM Speakers WHERE id = ?";
+    db.run(sql, id, err => {
+      // if (err) ...
+      res.redirect("/api/speakers");
+    });
+  });
+
 
 
    

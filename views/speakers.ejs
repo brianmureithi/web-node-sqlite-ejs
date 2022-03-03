@@ -23,9 +23,13 @@
                 <td><%= speaker.workplace %></td>
                 <td class="d-print-none">
                     <a class="btn  btn-tm" href="/api/speakers/<%= speaker.id %>">View</a>
-                  <a class="btn  btn-danger" href="/edit/<%= speaker.id %>">Edit</a>
-                  <a class="btn  btn-warning" href="/delete/<%= speaker.id %>">Delete</a>
+                  <a class="btn  btn-danger" href="/speakers/edit/<%= speaker.id %>">Edit</a>
+                  <a class="btn  btn-warning" onclick="  confirm('You are about to delete Speaker <%= speaker.name %> ?') ? document.getElementById('delete-speaker-<%= speaker.id %>').submit() : ''  ">Delete</a>
                 </td>
+                <form action="/delete/<%= speaker.id %>" method="post" id="delete-speaker-<%= speaker.id %>">
+                  
+                    
+                </form>
               </tr>
             <% } %>
           </tbody>
