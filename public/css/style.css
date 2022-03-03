@@ -2,6 +2,7 @@
 body, html{
     margin:0 !important;
     padding: 0!important;
+    background-color: #e9dcc5;
 }
 .nav{
     display: flex;
@@ -31,7 +32,6 @@ body, html{
 font-size:32px;
 color:#f0c28e
 }
-.
 
 
 
@@ -90,6 +90,123 @@ color:#f0c28e
  .navbar-item a:hover{
     color:#9c5f1a;
 } 
+
+/* styling speakers table */
+.speakers{
+    width:100%;   
+    padding:10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    top: 90px;
+}
+.heading{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #085823;
+}
+table {
+    border-collapse: collapse;
+  }
+ h1{
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  th, td {
+    border-bottom: 1px solid #ddd;
+        padding: 15px;
+        text-align: left;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+  }
+  tr:hover, tr:nth-child(even):hover{
+    background-color: rgb(243, 243, 243);
+  }
+  tr:nth-child(even){
+      background-color: #dfdfdf;
+  }
+  .btn{
+      padding: 5px 15px;
+      background:#007d8d;
+      border:none;
+      border-radius:5px;
+  
+      transition: 8ms;
+
+  }
+  .btn:hover{
+      padding:8px 17px;
+  }
+  .btn-success{
+      background-color: #90a322;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .btn-warning{
+      background-color: #a85f00;
+  }
+  .btn-warning{
+    background-color: #e72e00;
+}
+.btn-tm{
+    background-color: #018854;
+}
+  a{
+      text-decoration: none;
+      color:#eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+     
+  }
+  /* Styling speaker card */
+  .container{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  .speaker-card{
+      display: flex;
+    
+      position: absolute;
+      top:150px;
+      width: 60%;
+      border: solid 1px rgb(231, 231, 231);
+      border-radius: 5px;
+      background-color: #f1f1f1;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 50px;
+  }
+  .speaker-card h2{
+      align-self: flex-start;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+  }
+  .about{
+      align-self: flex-start;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px 15px;
+      font-size: 17px;
+  }
+  .workplace{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color:#ddd;
+    background: #181717;
+    padding: 5px;
+
+  }
+  .edit-1{
+      align-self: flex-end;
+  }
+  .title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: #085823;
+  }
 
 
 /* Footer styles */

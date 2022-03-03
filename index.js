@@ -1,4 +1,5 @@
-const express= require("express")
+const express= require("express");
+const { render } = require("express/lib/response");
 const path = require("path")
 const sqlite3= require("sqlite3").verbose();
 
@@ -54,18 +55,33 @@ app.listen(5000, ()=> {
 
 /* Returning home screen */
 app.get("/", (req,res) =>{
-res.render("index");
+res.render("index")
 })
 
 /* Fetching all speakers data */
-app.get("/speakers", (req, res) =>{
+app.get("/api/speakers", (req, res) =>{
     const fetch_speakers= "SELECT * FROM Speakers ORDER BY id"
     db.all(fetch_speakers, [], (err,rows) => {
         if(err){
-            return console.error(err.message);
+            return console.error(err.message)
 
         }
-        res.render("speakers", {model: rows});
+        res.render("speakers", {model: rows})
 
     })
+
+    app.get("/api/speakers/:id", (req, res) =>{
+        const id= req.params.id;
+        const findspeakerbyid="SELECT * FROM Speakers WHERE id=?";
+        db.get(findspeakerbyid, id,(err,row)=>{
+            if(err){
+                console.error(err.message)
+            }
+            res.render("speaker", {model: row})
+
+        });
+
+    })
+
+   
 })
