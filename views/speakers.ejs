@@ -1,7 +1,8 @@
 <%- include("header") -%>
 <div class="speakers">
+    <h1 class="heading">Speakers</h1>
 
-        <table class="table table-hover">
+        <table class="table ">
           <thead>
             <tr>
               <th>id</th>
@@ -21,17 +22,19 @@
                 <td><%= speaker.title %></td>
                 <td><%= speaker.workplace %></td>
                 <td class="d-print-none">
-                  <a class="btn  btn-warning" href="/edit/<%= speaker.id %>">Edit</a>
-                  <a class="btn  btn-danger" href="/delete/<%= speaker.id %>">Delete</a>
+                    <a class="btn  btn-tm" href="/api/speakers/<%= speaker.id %>">View</a>
+                  <a class="btn  btn-danger" href="/edit/<%= speaker.id %>">Edit</a>
+                  <a class="btn  btn-warning" href="/delete/<%= speaker.id %>">Delete</a>
                 </td>
               </tr>
             <% } %>
           </tbody>
         </table>
       </div>
-
-
-
-
-
+      
 <%- include("footer") -%>
+
+
+
+
+

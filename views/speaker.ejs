@@ -1,0 +1,32 @@
+<%- include("header") -%>
+
+
+<div class="container">
+    <div class="speaker-card">
+        <h2><%= model.name %></h2>
+        <h4 class="title">
+            <%= model.title %>
+        </h4>
+        <p class="workplace">
+            <%= model.workplace %>
+        </p>
+        <p  class="about">
+            <%= model.about %>
+        </p>
+
+        <a class="btn  btn-danger edit-1" href="/edit/<%= model.id %>">Edit</a>
+
+        <div>
+
+
+        </div>
+  
+
+    </div>
+    </div>
+
+
+
+ 
+
+<%- include("footer") -%>
