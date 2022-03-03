@@ -9,8 +9,8 @@ body, html{
     width:100%;
     position:fixed;
     height: 10vh;
-    top:0;
-    
+    top:0;    
+    z-index: 1;
 
     flex-direction: row;
     justify-content: space-evenly;
@@ -50,7 +50,7 @@ color:#f0c28e
 
 .navbar-right{
     padding: 10px;
-    margin-top:10px; 
+    margin-top:23px; 
     display: block;
 }
 .navbar-items{
@@ -90,6 +90,75 @@ color:#f0c28e
  .navbar-item a:hover{
     color:#9c5f1a;
 } 
+/* Styling banner */
+.banner{
+    width: 100%;
+    background-image: url('/assets/banner-3.jpg');
+    height: 88vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 80px;
+    display:flex;
+    flex-direction: row;
+   
+}
+.banner-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.banner-item h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 45px;
+    font-weight: 500;
+    color: #eee;
+    padding: 5px 10px;
+}
+.banner-item p{
+    font-size: 27px;
+    color: rgb(248, 228, 228);
+   padding: 0px 10px;
+   margin: 10px!important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.detail{
+margin-top: 60px;
+    padding:20px 50px;
+    position: absolute;
+    text-align: center;
+    bottom: 100px;
+    width: 60%;
+    
+}
+.banner-detail{
+    color: #ffffff !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    line-height: 2rem;
+    font-size: 20px !important;
+   
+   
+  
+}
+/* View speakers button */
+.view-speakers{
+    padding:10px 20px;
+    background:#04AA6D;
+    color: rgb(247, 244, 239);
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border:none;
+    cursor: pointer;
+    transition: 10ms;
+}
+.view-speakers:hover{
+    background: transparent;
+    border: solid 1px #04AA6D ;
+}
 
 /* styling speakers table */
 .speakers{
@@ -146,6 +215,7 @@ table {
   }
   .btn-warning{
     background-color: #e72e00;
+    cursor: pointer;
 }
 .btn-tm{
     background-color: #018854;
@@ -213,7 +283,7 @@ table {
 .footer{
     display: flex;
     width: 100%;
-    height: 10vh;
+    height: 7vh;
     background-image: linear-gradient(to right , #272727, #1a1818);
     flex-direction: row;
     justify-content: center;
@@ -272,11 +342,20 @@ table {
   form{
       background-color: #fbffff;
       width: 60%;
-    padding: 80px 20px;
+    padding: 40px 20px;
       
 
   }
-  
+  form h1{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      color: #2e2e2e;
+  }
+  form h1 span{
+      font-size: 20px;
+      color: #085823;
+
+  }
   .col-25 {
     float: left;
     width: 25%;
