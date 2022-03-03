@@ -1,0 +1,37 @@
+<%- include("header") -%>
+<div class="speakers">
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Work Place</th>
+              <th class="">
+                <a class="btn  btn-success" href="/create">Add</a>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (const speaker of model) { %>
+              <tr>
+                <td><%= speaker.id %></td>
+                <td><%= speaker.name %></td>
+                <td><%= speaker.title %></td>
+                <td><%= speaker.workplace %></td>
+                <td class="d-print-none">
+                  <a class="btn  btn-warning" href="/edit/<%= speaker.id %>">Edit</a>
+                  <a class="btn  btn-danger" href="/delete/<%= speaker.id %>">Delete</a>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+<%- include("footer") -%>
