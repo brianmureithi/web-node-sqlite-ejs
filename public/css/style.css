@@ -8,7 +8,7 @@ body, html{
     display: flex;
     width:100%;
     position:fixed;
-    height: 10vh;
+    height: 15vh;
     top:0;    
     z-index: 1;
 
@@ -46,6 +46,12 @@ color:#f0c28e
    font-size:30px;
    color:#ffffff;
   
+}
+@media screen and (max-height: 600px) {
+    .nav{
+        height: 15vh !important;
+    }
+
 }
 @media screen and (max-width: 700px) {
     .h2{
@@ -119,13 +125,13 @@ color:#f0c28e
 }
 .banner-item h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 45px;
+    font-size: 36px;
     font-weight: 500;
     color: #eee;
     padding: 5px 10px;
 }
 .banner-item p{
-    font-size: 27px;
+    font-size: 28px;
     color: rgb(248, 228, 228);
    padding: 0px 10px;
    margin: 10px!important;
@@ -136,7 +142,7 @@ margin-top: 60px;
     padding:20px 50px;
     position: absolute;
     text-align: center;
-    bottom: 100px;
+    bottom: 30px;
     width: 60%;
     
 }
@@ -145,7 +151,7 @@ margin-top: 60px;
     color: #ffffff !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     line-height: 2rem;
-    font-size: 20px !important;
+    font-size: 15px !important;
    
    
   
@@ -317,7 +323,7 @@ table {
     background-image: linear-gradient(to right , #272727, #1a1818);
     flex-direction: row;
     justify-content: center;
-    position: absolute;
+   
     bottom: 0;
     align-items: center;
 }
